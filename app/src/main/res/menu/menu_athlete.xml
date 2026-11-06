@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_athlete_today"
+        android:icon="@drawable/ic_heart_pulse"
+        android:title="Heute" />
+    <item
+        android:id="@+id/nav_athlete_calendar"
+        android:icon="@drawable/ic_checkin_calendar"
+        android:title="Kalender" />
+    <item
+        android:id="@+id/nav_athlete_trends"
+        android:icon="@drawable/ic_rpe_gauge"
+        android:title="Verlauf" />
+    <item
+        android:id="@+id/nav_athlete_profile"
+        android:icon="@drawable/ic_runner"
+        android:title="Profil" />
+</menu>

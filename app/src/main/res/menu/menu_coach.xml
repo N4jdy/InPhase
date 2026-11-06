@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_coach_dashboard"
+        android:icon="@drawable/ic_heart_pulse"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/nav_coach_training"
+        android:icon="@drawable/ic_checkin_calendar"
+        android:title="Training" />
+    <item
+        android:id="@+id/nav_coach_team"
+        android:icon="@drawable/ic_whistle"
+        android:title="Team" />
+    <item
+        android:id="@+id/nav_coach_profile"
+        android:icon="@drawable/ic_runner"
+        android:title="Profil" />
+</menu>

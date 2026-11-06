@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingBottom="130dp">
+
+        <!-- HEADER -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trends_title"
+            android:textColor="@color/text_dark"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/trends_subtitle"
+            android:textColor="@color/text_light_gray"
+            android:textSize="14sp" />
+
+        <!-- 2x2 KPI GRID WITH COOL ICONS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- KPI 1: Ø Readiness -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/pastel_green"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Icon Badge -->
+                        <FrameLayout
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/circle_gray"
+                            android:backgroundTint="@color/mint_soft_bg">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_heart_pulse"
+                                app:tint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/kpi_avg_readiness"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvKpiReadiness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/forest_green"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="82%" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- KPI 2: Trainings -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/pastel_green"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Icon Badge -->
+                        <FrameLayout
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/circle_gray"
+                            android:backgroundTint="@color/mint_soft_bg">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_runner"
+                                app:tint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/kpi_trainings_count"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvKpiTrainings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_dark"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="5" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- KPI 3: Ø RPE -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/pastel_green"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Icon Badge -->
+                        <FrameLayout
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/circle_gray"
+                            android:backgroundTint="@color/mint_soft_bg">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_rpe_gauge"
+                                app:tint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/kpi_avg_rpe"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvKpiRpe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_dark"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="6.5" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- KPI 4: Check-ins -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/pastel_green"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Icon Badge -->
+                        <FrameLayout
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:background="@drawable/circle_gray"
+                            android:backgroundTint="@color/mint_soft_bg">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_checkin_calendar"
+                                app:tint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/kpi_checkin_rate"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvKpiCheckins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/text_dark"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        tools:text="7" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- WEEKLY BAR CHART CARD WITH INPHASE TONAL GREEN COLORS -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="3dp"
+            app:strokeColor="@color/pastel_green"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/weekly_chart_title"
+                            android:textColor="@color/text_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/weekly_chart_sub"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <!-- Chart Badge Icon -->
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/circle_gray"
+                        android:backgroundTint="@color/pastel_green_light">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_inphase_logo" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <!-- 7 Vertical Bar Columns (Mo - So) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="20dp"
+                    android:baselineAligned="false"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <!-- Day 1 (Mo) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="85%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill1"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Mo" />
+                    </LinearLayout>
+
+                    <!-- Day 2 (Di) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="90%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill2"
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/mint_primary" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Di" />
+                    </LinearLayout>
+
+                    <!-- Day 3 (Mi) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="60%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill3"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/mint_medium" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Mi" />
+                    </LinearLayout>
+
+                    <!-- Day 4 (Do) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="80%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill4"
+                                android:layout_width="match_parent"
+                                android:layout_height="75dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Do" />
+                    </LinearLayout>
+
+                    <!-- Day 5 (Fr) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="45%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill5"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/mint_light" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Fr" />
+                    </LinearLayout>
+
+                    <!-- Day 6 (Sa) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="88%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill6"
+                                android:layout_width="match_parent"
+                                android:layout_height="88dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/mint_primary" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Sa" />
+                    </LinearLayout>
+
+                    <!-- Day 7 (So) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvBarScore7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_light_gray"
+                            android:textSize="11sp"
+                            tools:text="92%" />
+
+                        <FrameLayout
+                            android:layout_width="22dp"
+                            android:layout_height="110dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/bg_bar_pill"
+                            android:backgroundTint="@color/pastel_green_light">
+
+                            <View
+                                android:id="@+id/barFill7"
+                                android:layout_width="match_parent"
+                                android:layout_height="92dp"
+                                android:layout_gravity="bottom"
+                                android:background="@drawable/bg_bar_pill"
+                                android:backgroundTint="@color/forest_green" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvBarDay7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_dark"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="So" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- INSIGHT BANNER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/pastel_green_light"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/pastel_green"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvInsightTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/insight_title"
+                    android:textColor="@color/forest_green_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvInsightSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/insight_sub"
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- HISTORY RECYCLERVIEW -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/history_title"
+            android:textColor="@color/text_dark"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTrends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

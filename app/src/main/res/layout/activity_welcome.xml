@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="48dp"
+    android:paddingBottom="32dp">
+
+    <!-- Top Bar: Logo Icon -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/ic_inphase_logo"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- HERO ARTWORK: Floating Overlapping Circles -->
+    <!-- Circle 1: Top Right - Large Pastel Green Circle -->
+    <View
+        android:id="@+id/circleTopRight"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="@drawable/circle_gray"
+        android:backgroundTint="@color/pastel_green"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="-30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Icon inside Circle 1 -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_runner"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/circleTopRight"
+        app:layout_constraintEnd_toEndOf="@id/circleTopRight"
+        app:layout_constraintStart_toStartOf="@id/circleTopRight"
+        app:layout_constraintTop_toTopOf="@id/circleTopRight" />
+
+    <!-- Circle 2: Upper Middle - Soft Mint Circle -->
+    <View
+        android:id="@+id/circleUpperMid"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:background="@drawable/circle_gray"
+        android:backgroundTint="@color/pastel_green_light"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Icon inside Circle 2 -->
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_whistle"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/circleUpperMid"
+        app:layout_constraintEnd_toEndOf="@id/circleUpperMid"
+        app:layout_constraintStart_toStartOf="@id/circleUpperMid"
+        app:layout_constraintTop_toTopOf="@id/circleUpperMid" />
+
+    <!-- Circle 3: Center Left - Large Pastel Mint Circle -->
+    <View
+        android:id="@+id/circleCenterLeft"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:background="@drawable/circle_gray"
+        android:backgroundTint="#D0F4DE"
+        android:layout_marginTop="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Icon inside Circle 3 -->
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/ic_heart_pulse"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="@id/circleCenterLeft"
+        app:layout_constraintEnd_toEndOf="@id/circleCenterLeft"
+        app:layout_constraintStart_toStartOf="@id/circleCenterLeft"
+        app:layout_constraintTop_toTopOf="@id/circleCenterLeft" />
+
+    <!-- Circle 4: Right Big Feature Circle - Forest Green -->
+    <View
+        android:id="@+id/circleBigRight"
+        android:layout_width="210dp"
+        android:layout_height="210dp"
+        android:background="@drawable/circle_gray"
+        android:backgroundTint="@color/forest_green"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="-50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Text overlay inside Circle 4 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/pastel_green"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.15"
+        app:layout_constraintBottom_toBottomOf="@id/circleBigRight"
+        app:layout_constraintEnd_toEndOf="@id/circleBigRight"
+        app:layout_constraintStart_toStartOf="@id/circleBigRight"
+        app:layout_constraintTop_toTopOf="@id/circleBigRight" />
+
+    <!-- BOTTOM CONTENT SECTION -->
+    <LinearLayout
+        android:id="@+id/layoutTextContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@id/btnWelcomeRegister"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_brand_subtitle"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_light_gray"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_headline"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/text_dark" />
+
+    </LinearLayout>
+
+    <!-- ACTION BUTTON 1: Primary Register Pill Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnWelcomeRegister"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/welcome_register"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/forest_green"
+        app:cornerRadius="28dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btnWelcomeLogin"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ACTION BUTTON 2: Secondary Login Pill Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnWelcomeLogin"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/welcome_login"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        app:backgroundTint="@color/pastel_green_light"
+        app:cornerRadius="28dp"
+        app:strokeColor="@color/pastel_green"
+        app:strokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

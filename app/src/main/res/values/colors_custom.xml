@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Training Types Colors -->
+    <color name="train_team">#006466</color>
+    <color name="train_gym">#118AB2</color>
+    <color name="train_match">#E76F51</color>
+    <color name="train_recovery">#9D4EDD</color>
+    <color name="train_run">#06D6A0</color>
+</resources>

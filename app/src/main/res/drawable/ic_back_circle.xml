@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <!-- Soft Pastel/Mint Circle Background -->
+    <path
+        android:fillColor="#EAF0EA"
+        android:pathData="M20,0 C31.05,0 40,8.95 40,20 C40,31.05 31.05,40 20,40 C8.95,40 0,31.05 0,20 C0,8.95 8.95,0 20,0 Z" />
+
+    <!-- Rounded Left Arrow -->
+    <path
+        android:fillColor="#212529"
+        android:pathData="M25,19 H15.83 l3.59,-3.59 c0.39,-0.39 0.39,-1.02 0,-1.41 c-0.39,-0.39 -1.02,-0.39 -1.41,0 l-5.3,5.29 c-0.39,0.39 -0.39,1.02 0,1.41 l5.3,5.29 c0.39,0.39 1.02,0.39 1.41,0 c0.39,-0.39 0.39,-1.02 0,-1.41 L15.83,21 H25 c0.55,0 1,-0.45 1,-1 s-0.45,-1 -1,-1 z" />
+
+</vector>
