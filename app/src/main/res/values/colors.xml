@@ -2,4 +2,30 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Neues Theme: Waldgrün & Pastellgrün -->
+    <color name="forest_green">#2D6A4F</color>
+    <color name="forest_green_dark">#1B4332</color>
+    <color name="mint_primary">#52B788</color>
+    <color name="mint_medium">#74C69D</color>
+    <color name="mint_light">#95D5B2</color>
+    <color name="mint_soft_bg">#D8F3DC</color>
+    <color name="pastel_green">#D8E2DC</color>
+    <color name="pastel_green_light">#EAF0EA</color>
+    <color name="background_light">#F8F9F8</color>
+    <color name="text_dark">#212529</color>
+    <color name="text_light_gray">#6C757D</color>
+    <color name="error_color">#E63946</color>
+    <!-- Trainingstyp Farben -->
+    <color name="type_team_training">#2D6A4F</color>
+    <color name="type_match">#E63946</color>
+    <color name="type_gym">#F4A261</color>
+    <color name="type_recovery">#52B788</color>
+    <color name="type_run">#3A86FF</color>
+
+    <color name="type_team_training_bg">#D8F3DC</color>
+    <color name="type_match_bg">#FFD8D8</color>
+    <color name="type_gym_bg">#FFE8D6</color>
+    <color name="type_recovery_bg">#D8F3DC</color>
+    <color name="type_run_bg">#D0E1FD</color>
 </resources>

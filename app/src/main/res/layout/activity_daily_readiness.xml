@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            android:background="?android:attr/windowBackground">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_back_circle"
+                app:title="Morning Check-in" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Segment 1: Subjektives Befinden -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subjektives Befinden"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView android:text="Schlafqualität" android:textStyle="bold" android:layout_marginBottom="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/tgSleepQuality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="4dp">
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/sq1" android:text="1" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/sq2" android:text="2" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/sq3" android:text="3" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/sq4" android:text="4" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/sq5" android:text="5" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="1 = sehr schlecht" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 = top" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                </LinearLayout>
+
+                <TextView android:text="Frische &amp; Energie" android:textStyle="bold" android:layout_marginBottom="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/tgFatigue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="4dp">
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/fa1" android:text="1" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/fa2" android:text="2" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/fa3" android:text="3" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/fa4" android:text="4" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/fa5" android:text="5" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="1 = völlig erschöpft" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 = topfit" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                </LinearLayout>
+
+                <TextView android:text="Muskelkater" android:textStyle="bold" android:layout_marginBottom="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/tgSoreness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="4dp">
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/so1" android:text="1" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/so2" android:text="2" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/so3" android:text="3" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/so4" android:text="4" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/so5" android:text="5" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="1 = sehr stark" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 = keiner" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                </LinearLayout>
+
+                <TextView android:text="Stresslevel" android:textStyle="bold" android:layout_marginBottom="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/tgStress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="4dp">
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/st1" android:text="1" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/st2" android:text="2" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/st3" android:text="3" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/st4" android:text="4" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/st5" android:text="5" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="1 = viel Stress" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 = sehr entspannt" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                </LinearLayout>
+
+                <TextView android:text="Stimmung" android:textStyle="bold" android:layout_marginBottom="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/tgMood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="4dp">
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/mo1" android:text="1" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/mo2" android:text="2" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/mo3" android:text="3" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/mo4" android:text="4" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <com.google.android.material.button.MaterialButton style="?attr/materialButtonOutlinedStyle" android:id="@+id/mo5" android:text="5" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="1 = sehr schlecht" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5 = top" android:textSize="12sp" android:textColor="@color/text_light_gray"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Segment 2: Objektive Daten -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Objektive Vitaldaten (Optional)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ruhepuls (bpm)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    android:layout_marginBottom="16dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRestingHR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Schlafdauer (in Stunden, z.B. 7.5)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSleepHours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Segment 3: Zyklus -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zyklus-Tracking &amp; Privatsphäre"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="32dp"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aktuelle Zyklusphase:"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+                <Spinner
+                    android:id="@+id/spCyclePhase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchCyclePrivate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zyklusdaten vor Trainer verbergen"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Deine Zyklusdaten fließen trotzdem in die Erholungsberechnung ein."
+                    android:textSize="12sp"
+                    android:textColor="@color/text_light_gray"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitCheckin"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Check-in abschließen"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"/>
+
+        <ProgressBar
+            android:id="@+id/pbCheckin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

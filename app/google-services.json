@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "210228258140",
+    "project_id": "inphase-uni",
+    "storage_bucket": "inphase-uni.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210228258140:android:6327b7332d6e63a8bfcd99",
+        "android_client_info": {
+          "package_name": "at.mci.inphase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMFCge9bzhWmyy65jUr1rm1WZjZdSkbwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

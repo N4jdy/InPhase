@@ -1,3 +1,106 @@
 <resources>
     <string name="app_name">InPhase</string>
+    <string name="training_title_format">Training: %1$s</string>
+    <string name="details_format">Details: %1$s</string>
+    <string name="score_format">%1$d%%</string>
+    <string name="rate_session_title">Einheit bewerten: %1$s</string>
+    <string name="avg_score_format">Durchschnittlicher Score (Historie): %1$d%%</string>
+    <string name="no_entries_yet">Noch keine Einträge vorhanden.</string>
+    <string name="stat_green_format">Grün: %1$d</string>
+    <string name="stat_yellow_format">Gelb: %1$d</string>
+    <string name="stat_red_format">Rot: %1$d</string>
+    <string name="workload_rpe_format">RPE: %1$d</string>
+    <string name="workload_total_format">Dauer: %1$dm | WL: %2$d</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_brand_subtitle">INPHASE • ATHLETE &amp; COACH</string>
+    <string name="welcome_headline">In Sync.\nPerform together.</string>
+    <string name="welcome_register">Registrieren</string>
+    <string name="welcome_login">Anmelden</string>
+
+    <!-- Dashboard Screen -->
+    <string name="greeting_format">Hallo, %1$s!</string>
+    <string name="greeting_fallback">Hallo!</string>
+    <string name="today_date_format">Heute, %1$s</string>
+    <string name="checkmark_symbol">✓</string>
+    <string name="prognosis_header">ERHOLUNGSPROGNOSE</string>
+    <string name="prognosis_no_checkin">Noch kein Check-in</string>
+    <string name="prognosis_no_checkin_sub">Starte das Check-in für deine Tages-Prognose</string>
+    <string name="prognosis_green">Gut erholt – Bereit fürs Training</string>
+    <string name="prognosis_green_sub">Optimaler Erholungszustand für maximale Belastung.</string>
+    <string name="prognosis_yellow">Eingeschränkt erholt – Intensität anpassen</string>
+    <string name="prognosis_yellow_sub">Mittlere Erholung. Trainingsintensität moderat halten.</string>
+    <string name="prognosis_red">Niedrige Erholung – Fokus auf Regeneration</string>
+    <string name="prognosis_red_sub">Hohe Ermüdung. Regeneration steht heute im Fokus.</string>
+    <string name="your_plan_header">Dein Tagesplan</string>
+    <string name="checkin_pending_sub">Check-in ausstehen • Tippen zum Ausfüllen</string>
+    <string name="checkin_done_sub">Erledigt ✓ • Score: %1$d%%</string>
+    <string name="rate_pending_sub">Bewertung ausstehen • Tippen zum Bewerten</string>
+    <string name="rate_done_sub">Bewertet ✓ • RPE %1$d</string>
+    <string name="no_trainings_scheduled">Keine Trainings für diesen Tag geplant.</string>
+
+    <!-- Trends Screen -->
+    <string name="trends_title">Trends &amp; Analyse</string>
+    <string name="trends_subtitle">Erholungs- &amp; Belastungsverlauf</string>
+    <string name="kpi_avg_readiness">Ø Readiness</string>
+    <string name="kpi_trainings_count">Trainings</string>
+    <string name="kpi_avg_rpe">Ø RPE</string>
+    <string name="kpi_checkin_rate">Check-ins</string>
+    <string name="weekly_chart_title">Wochenaktivität &amp; Erholung</string>
+    <string name="weekly_chart_sub">Erholungsverlauf der letzten 7 Tage</string>
+    <string name="insight_title">Status: Im grünen Bereich ✓</string>
+    <string name="insight_sub">Deine Erholung ist stabil. Gute Basis für hohe Belastungen!</string>
+    <string name="history_title">Letzte Einträge</string>
+    <!-- Calendar Screen -->
+    <string name="calendar_title">Kalender</string>
+    <string name="calendar_subtitle">Alle Einheiten im Überblick</string>
+    <string name="calendar_coach_title">Trainingsplanung</string>
+    <string name="calendar_coach_subtitle">Planung &amp; Übersicht aller Einheiten</string>
+    <string name="calendar_selected_date_format">Geplante Einheiten (%1$s)</string>
+    <string name="calendar_no_sessions">Keine Trainings an diesem Tag geplant.</string>
+    <!-- Team Management Screen -->
+    <string name="team_management_title">Team-Verwaltung</string>
+    <string name="team_code_header">Dein Team-Code</string>
+    <string name="team_code_hint">Teile diesen Code mit neuen Athletinnen.</string>
+    <string name="team_members_header">Mitglieder</string>
+    <!-- Profile Screen -->
+    <string name="profile_title">Mein Profil</string>
+    <string name="profile_personal_data">Persönliche Daten</string>
+    <string name="profile_save">Profil speichern</string>
+    <string name="profile_logout">Abmelden</string>
+    <string name="profile_name_hint">Name</string>
+    <string name="profile_email_label">E-Mail-Adresse</string>
+    <string name="profile_select_date">Datum auswählen</string>
+    <string name="profile_height_label">Größe (cm)</string>
+    <string name="profile_weight_label">Gewicht (kg)</string>
+    <string name="profile_birthdate_label">Geburtsdatum</string>
+    <string name="profile_stat_height">Größe</string>
+    <string name="profile_stat_weight">Gewicht</string>
+    <string name="profile_stat_age">Alter</string>
+    <string name="profile_stat_role">Rolle</string>
+    <string name="profile_stat_team_code">Team Code</string>
+    <string name="profile_stat_athletes_count">Athleten</string>
+    <string name="profile_role_athlete_format">Athlet • %1$s</string>
+    <string name="profile_role_coach_format">Coach • %1$s</string>
+    <!-- Coach Dashboard Screen -->
+    <string name="coach_dashboard_title">Team Dashboard</string>
+    <string name="coach_dashboard_subtitle">Tages-Readiness &amp; Status deines Teams</string>
+    <string name="coach_card_header">TEAM READINESS HEUTE</string>
+    <string name="coach_athletes_section">Heutiger Athleten-Status</string>
+    <string name="stat_label_green">Grün</string>
+    <string name="stat_label_yellow">Gelb</string>
+    <string name="stat_label_red">Rot</string>
+    <!-- Athlete Detail Screen -->
+    <string name="athlete_detail_title">Spielerinnen-Analyse</string>
+    <string name="athlete_detail_sub">Athletin • InPhase Team</string>
+    <string name="athlete_detail_weekly_chart">Wochenverlauf (7-Tage Readiness)</string>
+    <string name="athlete_detail_history_readiness">Erholungs-Historie (Check-ins)</string>
+    <string name="athlete_detail_history_workloads">Belastungen &amp; RPE (Trainings)</string>
+    <!-- Status Strings -->
+    <string name="status_recovered">Gut erholt</string>
+    <string name="status_moderate">Eingeschränkt erholt</string>
+    <string name="status_low">Niedrige Erholung</string>
+    <string name="status_checkin_done">Check-in erfolgt</string>
+    <string name="status_checkin_pending">Noch kein Check-in heute</string>
+    <string name="status_unknown">Status unbekannt</string>
 </resources>

@@ -1,8 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Base.Theme.InPhase" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Hauptfarben -->
+        <item name="colorPrimary">@color/forest_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/pastel_green</item>
+        <item name="colorOnPrimaryContainer">@color/forest_green_dark</item>
+        
+        <!-- Sekundärfarben -->
+        <item name="colorSecondary">@color/pastel_green_light</item>
+        <item name="colorOnSecondary">@color/text_dark</item>
+        
+        <!-- Hintergrund & Oberflächen -->
+        <item name="android:windowBackground">@color/background_light</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_dark</item>
+        <item name="colorError">@color/error_color</item>
+        <item name="colorOnError">@color/white</item>
     </style>
 
     <style name="Theme.InPhase" parent="Base.Theme.InPhase" />
