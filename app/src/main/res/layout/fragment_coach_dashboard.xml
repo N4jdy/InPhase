@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_light"
-    android:fillViewport="true">
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:paddingBottom="160dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,12 +15,13 @@
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="20dp"
-        android:paddingBottom="130dp">
+        android:paddingBottom="160dp">
 
         <!-- HEADER -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
@@ -48,12 +51,21 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Brand Icon -->
-            <ImageView
+            <!-- Circular Dark Icon Badge -->
+            <FrameLayout
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:contentDescription="@null"
-                android:src="@drawable/ic_inphase_logo" />
+                android:background="@drawable/circle_gray"
+                android:backgroundTint="#1B4332">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_heart_pulse"
+                    app:tint="#52B788" />
+            </FrameLayout>
         </LinearLayout>
 
         <!-- TOP CARD: TEAM READINESS OVERVIEW WITH CIRCULAR PROGRESS RING -->
@@ -146,148 +158,280 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- 3 AMPEL STATUS KPIS (Grün, Gelb, Rot) -->
+        <!-- STATUS FILTER ROW HEADER ("STATUS FILTERN" + "Alle anzeigen") -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
-            <!-- Grün Card -->
-            <com.google.android.material.card.MaterialCardView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/mint_soft_bg"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                app:strokeColor="@color/pastel_green"
-                app:strokeWidth="1dp">
+                android:letterSpacing="0.05"
+                android:text="@string/status_filter_header"
+                android:textColor="@color/text_light_gray"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/stat_label_green"
-                        android:textColor="@color/forest_green_dark"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvStatGreen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:textColor="@color/forest_green_dark"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:text="6" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Gelb Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tvResetFilterLink"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="3dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="#FFF8E1"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                app:strokeColor="#FFE082"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/stat_label_yellow"
-                        android:textColor="#F57F17"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvStatYellow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:textColor="#F57F17"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:text="2" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Rot Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="#FFEBEE"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                app:strokeColor="#FFCDD2"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="14dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/stat_label_red"
-                        android:textColor="#C62828"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvStatRed"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:textColor="#C62828"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:text="0" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
+                android:text="@string/status_filter_all"
+                android:textColor="@color/forest_green"
+                android:textSize="13sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <!-- ATHLETEN STATUS SECTION -->
-        <TextView
-            android:layout_width="wrap_content"
+        <!-- HORIZONTAL CHIP FILTER BAR (Alle 8, 6 Bereit, 2 Eingeschränkt, 0 Pause) -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/coach_athletes_section"
-            android:textColor="@color/text_dark"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="24dp"
+            android:clipToPadding="false"
+            android:scrollbars="none">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Chip 1: Alle -->
+                <LinearLayout
+                    android:id="@+id/chipFilterAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_dark_active"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <TextView
+                        android:id="@+id/tvFilterAllTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/filter_chip_all"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFilterAllBadge"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_chip_count_badge"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        tools:text="8" />
+                </LinearLayout>
+
+                <!-- Chip 2: Bereit (Grün) -->
+                <LinearLayout
+                    android:id="@+id/chipFilterGreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_white_outlined"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/dot_colored"
+                        android:backgroundTint="#52B788" />
+
+                    <TextView
+                        android:id="@+id/tvFilterGreenTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:text="6 Bereit" />
+                </LinearLayout>
+
+                <!-- Chip 3: Eingeschränkt (Gelb/Orange) -->
+                <LinearLayout
+                    android:id="@+id/chipFilterYellow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_white_outlined"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/dot_colored"
+                        android:backgroundTint="#F4A261" />
+
+                    <TextView
+                        android:id="@+id/tvFilterYellowTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:text="2 Eingeschränkt" />
+                </LinearLayout>
+
+                <!-- Chip 4: Pause (Rot) -->
+                <LinearLayout
+                    android:id="@+id/chipFilterRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:background="@drawable/bg_chip_white_outlined"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/dot_colored"
+                        android:backgroundTint="#E63946" />
+
+                    <TextView
+                        android:id="@+id/tvFilterRedTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:text="0 Pause" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- ATHLETEN STATUS SECTION HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvAthletesSectionHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:letterSpacing="0.05"
+                android:text="@string/coach_athletes_section"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDisplayedCountBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_active_nav_tab"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:textColor="@color/forest_green_dark"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="8 angezeigt" />
+        </LinearLayout>
+
+        <!-- ATHLETEN LIST RECYCLER VIEW -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAthletes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false" />
+
+        <!-- PENDING CHECK-INS CARD (Ausstehende Einträge & Erinnerungs-Button) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPendingCheckins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/pastel_green"
+            app:strokeWidth="1.5dp"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Circle Pending Count Badge -->
+                <FrameLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/circle_gray"
+                    android:backgroundTint="@color/mint_soft_bg">
+
+                    <TextView
+                        android:id="@+id/tvPendingCountBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/forest_green_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="2" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvPendingSubtext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/text_dark"
+                    android:textSize="14sp"
+                    tools:text="2 Einträge stehen heute noch aus" />
+
+                <!-- Remind Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRemindPending"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/remind_button"
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:strokeColor="@color/pastel_green" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

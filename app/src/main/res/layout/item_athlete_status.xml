@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="16dp"
     app:cardElevation="2dp"
@@ -14,19 +16,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:padding="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+        <!-- Avatar Badge with Bottom-Right Status Dot -->
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="12dp">
 
-            <!-- Avatar Initials Circle -->
             <FrameLayout
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="top|start"
                 android:background="@drawable/circle_gray"
                 android:backgroundTint="@color/mint_soft_bg">
 
@@ -38,56 +42,92 @@
                     android:textColor="@color/forest_green_dark"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    tools:text="SM" />
+                    tools:text="LG" />
             </FrameLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <!-- Status Dot (Bottom-Right of Avatar) -->
+            <View
+                android:id="@+id/imgStatusDot"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/dot_colored"
+                android:backgroundTint="@color/type_team_training" />
+        </FrameLayout>
+
+        <!-- Athlete Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAthleteName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginEnd="12dp"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Leon Goretzka" />
 
-                <TextView
-                    android:id="@+id/tvAthleteName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_dark"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:text="Sandra Miller" />
+            <TextView
+                android:id="@+id/tvAthleteStatusSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/text_light_gray"
+                android:textSize="13sp"
+                tools:text="Zentrales Mittelfeld" />
 
-                <TextView
-                    android:id="@+id/tvAthleteStatusSub"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:textColor="@color/text_light_gray"
-                    android:textSize="13sp"
-                    tools:text="Gut erholt" />
-            </LinearLayout>
+            <!-- Optional Warning Tag -->
+            <TextView
+                android:id="@+id/tvWarningBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_warning_chip"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="@string/warning_high_fatigue"
+                android:textColor="#B78103"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <!-- Score Pill & Subtext -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvReadinessScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/forest_green"
-                android:textSize="18sp"
+                android:background="@drawable/bg_score_pill_green"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:textColor="@color/forest_green_dark"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                tools:text="85%" />
-        </LinearLayout>
+                tools:text="94%" />
 
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/progressScore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:max="100"
-            app:indicatorColor="@color/forest_green"
-            app:trackColor="@color/pastel_green_light"
-            app:trackCornerRadius="4dp"
-            app:trackThickness="8dp" />
+            <TextView
+                android:id="@+id/tvSleepSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_light_gray"
+                android:textSize="11sp"
+                tools:text="Schlaf: 8.2h" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

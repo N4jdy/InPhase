@@ -86,10 +86,15 @@
     <string name="coach_dashboard_title">Team Dashboard</string>
     <string name="coach_dashboard_subtitle">Tages-Readiness &amp; Status deines Teams</string>
     <string name="coach_card_header">TEAM READINESS HEUTE</string>
-    <string name="coach_athletes_section">Heutiger Athleten-Status</string>
-    <string name="stat_label_green">Grün</string>
-    <string name="stat_label_yellow">Gelb</string>
-    <string name="stat_label_red">Rot</string>
+    <string name="coach_athletes_section">HEUTIGER ATHLETEN-STATUS</string>
+    <string name="stat_label_green">Bereit</string>
+    <string name="stat_label_yellow">Eingeschränkt</string>
+    <string name="stat_label_red">Pause</string>
+    <string name="status_filter_header">STATUS FILTERN</string>
+    <string name="status_filter_all">Alle anzeigen</string>
+    <string name="filter_chip_all">Alle</string>
+    <string name="remind_button">Erinnern</string>
+    <string name="warning_high_fatigue">⚠️ Hohe Vortagslast</string>
     <!-- Athlete Detail Screen -->
     <string name="athlete_detail_title">Spielerinnen-Analyse</string>
     <string name="athlete_detail_sub">Athletin • InPhase Team</string>

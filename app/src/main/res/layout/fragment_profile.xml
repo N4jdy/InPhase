@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_light"
-    android:fillViewport="true">
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:paddingBottom="160dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +15,7 @@
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="20dp"
-        android:paddingBottom="130dp">
+        android:paddingBottom="160dp">
 
         <!-- HEADER WITH TOP-RIGHT CIRCULAR LOGOUT BUTTON -->
         <LinearLayout
@@ -34,12 +36,14 @@
             <!-- Circular Gray Logout Button -->
             <ImageButton
                 android:id="@+id/btnLogout"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
                 android:background="@drawable/circle_gray"
                 android:backgroundTint="@color/pastel_green_light"
+                android:clickable="true"
                 android:contentDescription="@string/profile_logout"
-                android:padding="9dp"
+                android:focusable="true"
+                android:padding="10dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_logout"
                 app:tint="@color/text_light_gray" />
