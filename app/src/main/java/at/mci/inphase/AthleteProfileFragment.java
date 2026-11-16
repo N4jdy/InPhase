@@ -63,7 +63,7 @@ public class AthleteProfileFragment extends Fragment {
         tvProfileEmail = view.findViewById(R.id.tvProfileEmail);
         btnProfileBirthDate = view.findViewById(R.id.btnProfileBirthDate);
         btnProfileSave = view.findViewById(R.id.btnProfileSave);
-        Button btnLogout = view.findViewById(R.id.btnLogout);
+        android.widget.ImageButton btnLogout = view.findViewById(R.id.btnLogout);
 
         // Labels for Athlete
         tvStat1Label.setText(getString(R.string.profile_stat_height));
